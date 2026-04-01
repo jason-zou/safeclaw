@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -724,7 +724,8 @@
       }
     };
 
-    let currentLang = 'zh';
+    const userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    let currentLang = userLang.startsWith('zh') ? 'zh' : 'en';
 
     function applyLang(lang) {
       currentLang = lang;
@@ -743,6 +744,8 @@
         if (T[lang][key] !== undefined) el.innerHTML = T[lang][key];
       });
     }
+
+    applyLang(currentLang);
 
     document.getElementById('langBtn').addEventListener('click', function() {
       applyLang(currentLang === 'zh' ? 'en' : 'zh');
