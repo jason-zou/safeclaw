@@ -337,7 +337,7 @@
       <li><a href="#comparison" data-i18n="nav.compare">对比</a></li>
       <li><a href="#architecture" data-i18n="nav.security">安全</a></li>
       <li><a href="https://github.com/jason-zou/safeclaw/releases" class="nav-cta" data-i18n="nav.download">下载</a></li>
-      <li><button class="lang-switch" onclick="toggleLang()">EN</button></li>
+      <li><button class="lang-switch" id="langBtn">EN</button></li>
     </ul>
   </nav>
 
@@ -744,11 +744,9 @@
       });
     }
 
-    function toggleLang() {
+    document.getElementById('langBtn').addEventListener('click', function() {
       applyLang(currentLang === 'zh' ? 'en' : 'zh');
-    }
-
-    // Reveal animations handled by pure CSS @keyframes — no JS dependency
+    });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
