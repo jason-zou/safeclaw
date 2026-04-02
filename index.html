@@ -3,9 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SafeClaw — 安全优先的 AI 助理网关平台</title>
-  <meta name="description" content="SafeClaw 是面向企业和高级用户的安全型 AI 助理网关平台。把 AI Agent 接进真实系统，同时把它放进可控边界里。" />
-  <link rel="icon" type="image/png" href="images/icon_1024.png" />
+  <title>SafeClaw — Security-First AI Assistant Gateway | 安全优先的 AI 助理网关</title>
+  <meta name="description" content="SafeClaw is a security-first AI assistant gateway built in Rust. Multi-layer message security, built-in RAG, multi-assistant collaboration, single binary deployment. 安全优先的 AI 助理网关平台。" />
+  <meta name="keywords" content="SafeClaw, AI gateway, AI assistant, AI agent, security, Rust, RAG, knowledge base, multi-assistant, enterprise AI, local-first AI, LLM gateway, OpenClaw alternative" />
+  <meta name="author" content="SafeClaw" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://jason-zou.github.io/safeclaw/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jason-zou.github.io/safeclaw/" />
+  <meta property="og:title" content="SafeClaw — Security-First AI Assistant Gateway" />
+  <meta property="og:description" content="Connect AI agents to real systems, securely. Built in Rust, single binary, multi-layer security architecture, multi-assistant collaboration." />
+  <meta property="og:image" content="https://jason-zou.github.io/safeclaw/images/app_icon.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_CN" />
+  <meta property="og:site_name" content="SafeClaw" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SafeClaw — Security-First AI Assistant Gateway" />
+  <meta name="twitter:description" content="Connect AI agents to real systems, securely. Rust single binary, multi-layer security, built-in RAG, multi-assistant collaboration." />
+  <meta name="twitter:image" content="https://jason-zou.github.io/safeclaw/images/app_icon.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SafeClaw",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "macOS",
+    "description": "Security-first AI assistant gateway for enterprises. Built in Rust, single binary, multi-layer message security, built-in RAG knowledge base, multi-assistant collaboration.",
+    "url": "https://jason-zou.github.io/safeclaw/",
+    "downloadUrl": "https://github.com/jason-zou/safeclaw/releases",
+    "softwareVersion": "0.4.13",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "license": "https://opensource.org/licenses/MIT"
+  }
+  </script>
+
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="icon" type="image/png" sizes="192x192" href="images/icon_1024.png" />
+  <link rel="apple-touch-icon" href="images/icon_1024.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -731,8 +771,11 @@
       currentLang = lang;
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
       document.title = lang === 'zh'
-        ? 'SafeClaw — 安全优先的 AI 助理网关平台'
-        : 'SafeClaw — Security-First AI Assistant Gateway';
+        ? 'SafeClaw — 安全优先的 AI 助理网关平台 | Security-First AI Gateway'
+        : 'SafeClaw — Security-First AI Assistant Gateway | 安全优先的 AI 助理网关';
+      document.querySelector('meta[name="description"]').setAttribute('content', lang === 'zh'
+        ? 'SafeClaw 是面向企业和高级用户的安全型 AI 助理网关平台。Rust 构建，多层消息安全，内置 RAG 知识库，多助手协同，单二进制部署。'
+        : 'SafeClaw is a security-first AI assistant gateway built in Rust. Multi-layer message security, built-in RAG, multi-assistant collaboration, single binary deployment.');
       document.querySelector('.lang-switch').textContent = lang === 'zh' ? 'EN' : '中文';
 
       document.querySelectorAll('[data-i18n]').forEach(el => {
