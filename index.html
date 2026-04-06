@@ -42,6 +42,15 @@
   }
   </script>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-50E354KQRG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-50E354KQRG');
+  </script>
+
   <meta name="theme-color" content="#0a0a0f" />
   <link rel="icon" type="image/png" sizes="192x192" href="images/icon_1024.png" />
   <link rel="apple-touch-icon" href="images/icon_1024.png" />
@@ -798,6 +807,18 @@
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    document.querySelectorAll('a[href*="github.com/jason-zou/safeclaw/releases"]').forEach(link => {
+      link.addEventListener('click', function () {
+        if (typeof gtag === 'function') {
+          gtag('event', 'download_click', {
+            event_category: 'download',
+            event_label: this.textContent.trim(),
+            transport_type: 'beacon'
+          });
+        }
       });
     });
   </script>
