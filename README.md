@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://jason-zou.github.io/safeclaw/icon.png" alt="SafeClaw" width="80" />
-</p>
-
 <h1 align="center">SafeClaw</h1>
 
 <p align="center">
